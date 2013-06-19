@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
 			HasFired = true;
 			
 			// Create a new missile.
-			Instantiate (missile, new Vector3 (transform.position.x, transform.position.y + renderer.bounds.size.y, 0), Quaternion.identity);
+			Instantiate (missile, new Vector3 (transform.position.x, transform.position.y + (renderer.bounds.size.y / 2), 0), Quaternion.identity);
 		}
 	}
 }

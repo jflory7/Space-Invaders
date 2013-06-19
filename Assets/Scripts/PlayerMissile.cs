@@ -3,12 +3,15 @@ using System.Collections;
 
 public class PlayerMissile : MonoBehaviour
 {
-
+	private Player player;
+	
 	// Use this for initialization
 	void Start ()
 	{
 		// Add initial force.
-		rigidbody.AddForce (0, 750, 0);
+		rigidbody.AddForce (0, 1000, 0);
+		
+		player = GameObject.Find ("Tank").GetComponent < Player > ();
 	}
 	
 	// Update is called once per frame
@@ -17,6 +20,8 @@ public class PlayerMissile : MonoBehaviour
 		if (transform.position.y > 17)
 		{
 			Destroy (gameObject);
+			
+			player.HasFired = false;
 		}
 	}
 
